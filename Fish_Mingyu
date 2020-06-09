@@ -1,0 +1,16 @@
+def Fish (A, B) :
+  meet = 1
+  while meet == 1 :
+    meet = 0
+    for k in range (len(A)-1) :
+      if B[k] == 1 and B[k+1] == 0 :
+        meet = 1
+        if A[k] > A[k+1] :
+          del A[k+1]
+          del B[k+1]
+        else :
+          del A[k]
+          del B[k]
+  return len(A)
+
+print(Fish([4,3,2,1,5],[0,1,0,0,0]))
